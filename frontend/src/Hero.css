@@ -1,0 +1,66 @@
+.hero-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+/* Base image */
+.image-base {
+  position: absolute;
+  inset: 0;
+  background: url('./assets/rashi.jpg') center / cover no-repeat;
+  z-index: 1;
+  
+}
+
+/* Reveal image */
+.image-reveal {
+  position: absolute;
+  inset: 0;
+
+  /* 🔍 ZOOM OUT */
+  background: url('./assets/rashi1.jpg') center / 70% no-repeat;
+
+  z-index: 2;
+  clip-path: circle(150px at var(--mouse-x) var(--mouse-y));
+  transition: clip-path 0.08s linear;
+  will-change: clip-path;
+}
+
+
+/* 🔥 Shadow / halo */
+.circle-shadow {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle 190px at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(0, 0, 0, 0.15) 55%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+
+/* Text */
+.hero-text {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+
+  font-size: 6vw;
+  font-weight: 900;
+  color: white;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 4;
+}
