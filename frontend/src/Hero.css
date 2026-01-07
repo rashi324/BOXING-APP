@@ -15,25 +15,35 @@
   inset: 0;
   background: url('./assets/rashi.jpg') center / cover no-repeat;
   z-index: 1;
-  
 }
 
-/* Reveal image */
+/* CLEAN REVEAL (NO DISTORTION) */
 .image-reveal {
   position: absolute;
   inset: 0;
-
-  /* 🔍 ZOOM OUT */
-  background: url('./assets/rashi1.jpg') center / 70% no-repeat;
-
+  background: url('./assets/rashi1.jpg') center / cover no-repeat;
   z-index: 2;
-  clip-path: circle(150px at var(--mouse-x) var(--mouse-y));
-  transition: clip-path 0.08s linear;
-  will-change: clip-path;
+
+  /* 👇 LOWER OPACITY HERE */
+  opacity: 0.6;
+
+  mask-image: radial-gradient(
+    circle 160px at var(--mouse-x) var(--mouse-y),
+    #fff 65%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: radial-gradient(
+    circle 160px at var(--mouse-x) var(--mouse-y),
+    #fff 65%,
+    transparent 100%
+  );
+
+  will-change: mask-image;
 }
 
 
-/* 🔥 Shadow / halo */
+/* Shadow / halo */
 .circle-shadow {
   position: absolute;
   inset: 0;
@@ -48,14 +58,12 @@
   );
 }
 
-
 /* Text */
 .hero-text {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-
   font-size: 6vw;
   font-weight: 900;
   color: white;

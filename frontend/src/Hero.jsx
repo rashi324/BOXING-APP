@@ -24,10 +24,7 @@ const Hero = () => {
     <div className="hero-container" ref={heroRef}>
       <div className="image-base"></div>
       <div className="image-reveal"></div>
-
-      {/* 🔥 Shadow */}
       <div className="circle-shadow"></div>
-
       <h1 className="hero-text">FIGHTER</h1>
     </div>
   );
