@@ -25,7 +25,7 @@ const Hero = () => {
       <div className="image-base"></div>
       <div className="image-reveal"></div>
       <div className="circle-shadow"></div>
-      <h1 className="hero-text">FIGHTER</h1>
+      <h1 className="hero-text"></h1>
     </div>
   );
 };

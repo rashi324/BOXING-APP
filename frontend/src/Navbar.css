@@ -1,0 +1,72 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 60px;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+
+  z-index: 10;
+}
+
+/* Left */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-icon {
+  font-size: 26px;
+  color: #e10600;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #fff;
+}
+
+/* Right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-right a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #fff;
+}
+
+/* Call to action */
+.nav-cta {
+  padding: 8px 18px;
+  border: 1px solid #e10600;
+  border-radius: 20px;
+  color: #fff !important;
+
+  transition: background 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: #e10600;
+}
